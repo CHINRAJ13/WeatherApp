@@ -11,6 +11,10 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
+app.get('/', (req, res) => {
+  res.send('API is working!');
+});
+
 app.use('/api/weather', weatherRouter);
 
 const port = process.env.PORT || 5000;
